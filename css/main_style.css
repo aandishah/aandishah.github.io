@@ -1,3 +1,12 @@
+/*
+Colorblind safe color palette from colorbrewer2.org
+#ca0020 - Red
+#f4a582 - Peach
+#f7f7f7 - Off-White
+#92c5de - Light Blue
+#0571b0 - Blue
+*/
+
 body {
 	background-color: #92c5de;
 	color: #5071b0;
