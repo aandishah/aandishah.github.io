@@ -8,18 +8,40 @@ Colorblind safe color palette from colorbrewer2.org
 */
 
 #header 
-/* The background-color CSS property controls the bakcground color of elements */
+/* 
+	background-color: This CSS property controls the background color of elements; 
+	in this instance the colors are set using the hexadecimal notation and is used to change the background to Blue
+	*/
 {
 	background-color: #0571b0;
 }
 
-h1 {
+h1 
+/* 
+	color:this keyword is used to set the color property values for elements in CSS, 
+	here is it used to change the h1 to off-white 
+	padding: the space between the content area and the border, for this instance it is set in pixels;
+	margin: the amount of spacing outside of an elements borders, it is set to 0. 
+*/
+
+{
 	color: #f7f7f7;
 	padding: 5px;
 	margin:  0;
 }
 
-#body-container {
+#body-container
+/* 
+	background-color: this changed the background of the body to Off-White
+	max-width: this element will be a maximum of 1000px width, no matter how enlarged the screen is.
+	margin: By setting the margin to auto, we ensure that the margin property to horizontally center element within it's container; 
+	the element will take up the specified height, and the remaining space will be split equally between the top and bottom margins. 
+	height: this sets the height of the area inside the padding, border and margin of the element. 
+	border: this specifies the width and the style of the border. 
+	border-radius:this rounds the corners of the border
+	overflow: this ensures that the overflow is clipped and the rest of the content will be invisible. 
+*/
+{
 	background-color: #f7f7f7;
 	max-width: 1000px;
 	margin: auto;
@@ -29,7 +51,15 @@ h1 {
 	overflow: hidden;
 }
 
-body {
+body 
+/*
+	background-color: this changed the background of the body to light blue
+	color: this changes the font color to Blue
+	text-align: this aligns all the writing to center
+	margin: 
+	font-size: this sets the font size of the writing 
+*/
+{
 	background-color: #92c5de;
 	color: #0571b0;
 	text-align: center;
@@ -37,16 +67,32 @@ body {
 	font-size: 20px;
 }
 
-#profile-picture {
+#profile-picture 
+/*
+	float: this makes the profile picture element float on the left side of the webpage. 
+*/
+{
 	float:  left;
 }
 
-#welcome-text {
+#welcome-text 
+/*
+	padding-top: this generates a padding on the top of the element
+	font-size: this changes the font size of the writing 
+*/
+{
 	padding-top: 25px;
 	font-size: 25px;
 }
 
-#Research-interests {
+#Research-interests 
+/*
+	text-align: this aligns the writing to the left
+	font-size:this changes the font size of the writing 
+	position: this element is positioned relative to its normal position. With a set value of 50px away from the left;
+	Other content will not fill into the gap created by this element. 
+*/
+{
 	text-align: left;
 	font-size: 20px;
 	position: relative;
