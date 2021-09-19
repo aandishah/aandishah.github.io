@@ -7,11 +7,52 @@ Colorblind safe color palette from colorbrewer2.org
 #0571b0 - Blue
 */
 
-body {
-	background-color: #92c5de;
-	color: #5071b0;
-	text-align: center;
+#header 
+/* The background-color CSS property controls the bakcground color of elements */
+{
+	background-color: #0571b0;
 }
+
 h1 {
 	color: #f7f7f7;
+	padding: 5px;
+	margin:  0;
+}
+
+#body-container {
+	background-color: #f7f7f7;
+	max-width: 1000px;
+	margin: auto;
+	height: 100vh;
+	border:  2px solid #f7f7f7;
+	border-radius: 25px;
+	overflow: hidden;
+}
+
+body {
+	background-color: #92c5de;
+	color: #0571b0;
+	text-align: center;
+	margin: 0;
+	font-size: 20px;
+}
+
+#profile-picture {
+	float:  left;
+}
+
+#welcome-text {
+	padding-top: 25px;
+	font-size: 25px;
+}
+
+#Research-interests {
+	text-align: left;
+	font-size: 20px;
+	position: relative;
+	left: 50px;
+}
+
+#copyright {
+
 }
