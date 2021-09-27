@@ -100,5 +100,8 @@ body
 }
 
 #copyright {
-
+position: absolute;
+width: 1000px;
+text-align: center;
+bottom: 20px;
 }

@@ -10,6 +10,7 @@
 		<div id="header">
 			<h1> Hello, welcome to my site, <script src="javascript/external.js"></script> ! </h1>
 		</div>
+
 		<div id="profile-picture">
 			<img src=images/profile-picture.jpg width=500px height=500px />
 		</div>
@@ -19,6 +20,7 @@
 		  <a href='https://www.clarku.edu/departments/geography/'>Graduate School of Geography</a> at
 		  <a href="https://www.clarku.edu/"> Clark University</a>.</p>
 		 </div>
+
 		 <div id="Research-interests">
 	  		<h3>Research Interest:</h3>
 			<ol>
@@ -28,11 +30,19 @@
 				<li>Cryosphere</li>
 			</ol>
 		</div>
-	 </div>
-	 <footer id="copyright">
-	 	© 2021 Aandishah Tehzeeb Samara
-	 </footer>
-  </body>
-  </html>
+
+		<div id="copyright">
+			<script>
+			// Create new object for date variable.
+			var today = new Date();
+			// Get the year as a four digit number (yyyy).
+			var year = today.getFullYear();
+			// Produce output in new line
+			document.writeln("Copyright &copy; " + year);
+			</script>
+		</div>
+	</div>	 
+ </body>
+ </html>
 
 
