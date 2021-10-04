@@ -1,55 +1,28 @@
-/*
-
-//document.write("Where is my JS code?");
-//window.alert(5 + 6);
-//window.alert('5 + 6');
-
-
-const x = "web";
-const y = "mapping";
-const out = x + y;
-document.write(out);
-
-
-
-//Prompt Box used to prompt user to input username before entering website
-user_name = window.prompt("Please enter your name", "Type your name here");
-document.write(user_name);
+/*var webmaps =
+[
+  ["Shipmap", 
+  "https://www.shipmap.org/",
+  "Shipmap.org is an ambitious interactive WebGL map of commercial shipping movements based on hundreds of millions of data points from throughout 2012 (the most recent year for which all the raw input data was available)."
+  ],
+  ["The Hate Map by Southern Poverty Law Center",
+  "https://www.splcenter.org/hate-map",
+  "The Hate Map on the spl website gives a quick and easy to follow visual narrative of where the hates groups across the US is located. It can be filtered by ideology, state, and relevant news to these groups are provided. "
+  ]  
+];*/
 
 
-const x = 22;
- y = 33;
-document.writeln(x + y) ;
-//document.writeln("<br>"); 
-//document.writeln(x += 33);
+var webmaps =
+[
+  ["Shipmap", 
+  "https://www.shipmap.org/",
+  "Shipmap.org is an ambitious interactive WebGL map of commercial" 
+  ],
+  ["The Hate Map by Southern Poverty Law Center",
+  "https://www.splcenter.org/hate-map",
+  "The Hate Map on the spl website gives a quick and easy to follow visual narrative"
+  ]  
+];
 
-
-
-document.writeln("<button onclick='condition()'> Conditional Test </button>")
-function condition ()
-{
-	x = confirm("Are you sure you want to proceed?");
-	if (x)
-	{
-		document.writeln("You chose Okay!");
-	}
-	else 
-	{
-		document.writeln("You chose Cancel!");
-	}
-}
-
-
-arr = ["Joe", "April", "Mark", "Sara"];
-for (var i=0; i < arr.length; i++)
-{
-	document.writeln(arr[i], "<br>")
-}
-
-Prompt Box used to prompt user to input username before entering website
-user_name = window.prompt("Please enter your name", "Type your name here");
-document.write(user_name);
-*/
 
 function welcome()
 {
@@ -64,9 +37,9 @@ function welcome()
 	return message
 }
 
-function webmap_table()
+/*function webmap_table()
 {
-  document.write("<table width=100%"); 
+  document.write("<table width=100%>"); 
   for (var row=0; row < 2; row++)
   {
 	document.write("<tr>");
@@ -77,8 +50,25 @@ function webmap_table()
 	document.write("</tr>");
   }
   document.write("</table>")
+}*/
+
+function webmap_table()
+{
+  document.write("<table width=100%>"); 
+  for (var row=0; row < webmaps.length; row++)
+  {
+	document.write("<tr>");
+	for (var column=0; column < webmaps[0].length; column++)
+	{
+		document.write("<td>" + webmaps[rows][column] + "</td>");
+	}
+	document.write("</tr>");
+  }
+  document.write("</table>")
 }
 
 
-
-
+function area_calculator()
+{
+	document.write
+}
