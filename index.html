@@ -33,11 +33,52 @@
 				<li>Cryosphere</li>
 			</ol>
 		</div>
+		<div id = area_calculator>
+		<form action="">
+			<legend> Input length and width of rectangle </legend>
+			<label for = "length">Length&nbsp;</label>
+			<input type="number" id= "length">
+			<br>
+			<label for = "width">Width&nbsp;&nbsp;</label>
+			<input type="number" id="width">
+			<input type="button" id="Cal" value ="Calculate" onclick="AreaCalc()">
+			<div>
+				<p>Area of the rectangle is:</p><p id="AreaCalc"></p>
+			</div>
+		 </form>
+		 </div>
+
+<div id= RESAMPLED>
+ <form action="">
+  <label for = "length">Length&nbsp;</label>
+  <input type="number" id="length"> <br>
+  <label for = "width">Width&nbsp;&nbsp;</label>
+  <input type="number" id="width">
+  <input type="button" id="calc" value="Submit" onclick="AreaCalculator()">
+  <di
+  <p>Result: </p><p id="AreaCalc"> </p>
+  </div>
+</form>
+</div>
+
+
+<div id= example>
+ <form action="">
+  <input type="number" id="amountBorrowed" placeholder="Amount Borrowed">
+  <input type="number" id="mortgageTerm" placeholder="Term in Years">
+  <input type="button" id="sub" value="Submit" onclick="mortgageCalc()">
+  <di
+  <p>Result: </p><p id="monthlyCost"> </p>
+  </div>
+</form>
+</div>
+
+
 		<div id = "webmap-reviews">
-<!-- 			<h3> Webmap Reviews! </h3> -->
+        <h3> Webmap Reviews! </h3> 
 			<script>
-				webmap_table()
-			</script>
+				webmap_table();
+			</script> 
 		</div>
 
 		<div id="copyright">
@@ -49,12 +90,6 @@
 			// Produce output in new line
 			document.writeln("Copyright &copy; " + year);
 			</script>
-		</div>
-		<div id = "area-calculator">''
-			<script type="text/javascript">
-				area_calculator()
-			</script>
-
 		</div>
 	</div>	 
  </body>
