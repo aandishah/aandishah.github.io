@@ -10,13 +10,18 @@ table {
   border-collapse: collapse;
   width: 100%;
 }
+th, td {
+  text-align: left;
+  padding: 8px;
+}
 tr:nth-child(even) {background-color: darkgrey;}
 tr:nth-child(odd) {background-color: lightgrey;}
 thead, tbody { display: block; }
+
 tbody {
-    height: 300px;       
-    overflow-y: auto;    
-    overflow-x: hidden;  
+    height: 300px;       /* Just for the demo          */
+    overflow-y: auto;    /* Trigger vertical scroll    */
+    overflow-x: hidden;  /* Hide the horizontal scroll */
 }
 </style>
   </head>
@@ -68,6 +73,18 @@ tbody {
 				webmap_table();
 			</script> 
 		</div>
+<!-- 
+		<div id="copyright">
+			<script>
+			// Create new object for date variable.
+			var today = new Date();
+			// Get the year as a four digit number (yyyy).
+			var year = today.getFullYear();
+			// Produce output in new line
+			document.writeln("Copyright &copy; " + year);
+			</script>
+		</div> -->
+	</div>	 
  </body>
  <footer>
  	<script>

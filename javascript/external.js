@@ -10,7 +10,7 @@ var webmaps =
   ],
   ["The Hate Map by Southern Poverty Law Center",
   "https://www.splcenter.org/hate-map",
-  "The Hate Map on the spl website gives a quick and easy to follow visual narrative \ narrative of where the hates groups across the US is located. \ . It can be filtered by ideology, state, and relevant news to these groups are provided. "
+  "The Hate Map on the spl website gives a quick and easy to follow visual narrative \ of where the hates groups across the US is located. \ It can be filtered by ideology, state, and relevant news to these groups are provided. "
   ]  
 ];
 
