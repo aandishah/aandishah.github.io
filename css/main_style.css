@@ -111,3 +111,17 @@ bottom: 20px;
 	font-size: 25px;
 	position: relative;
 }
+
+#area-calculator  {
+	background-color: #f7f7f7;
+}
+
+
+.topbox {
+	height: 100px;
+	width: 500px;
+	background-color: blue;
+	position: absolute;
+	z-index: 1;
+
+}

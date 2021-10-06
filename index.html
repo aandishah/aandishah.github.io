@@ -5,6 +5,20 @@
 	<!--All styling for this HTML document is contained in this external css file -->
 	<link rel="stylesheet" type="text/css" href="css/main_style.css">
 	<script src="javascript/external.js"></script> 
+	<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+tr:nth-child(even) {background-color: darkgrey;}
+tr:nth-child(odd) {background-color: lightgrey;}
+thead, tbody { display: block; }
+tbody {
+    height: 300px;       
+    overflow-y: auto;    
+    overflow-x: hidden;  
+}
+</style>
   </head>
   <body>
 	<div id="body-container">
@@ -40,39 +54,13 @@
 			<input type="number" id= "length">
 			<br>
 			<label for = "width">Width&nbsp;&nbsp;</label>
-			<input type="number" id="width">
+			<input type="number" id="width"> <br>
 			<input type="button" id="Cal" value ="Calculate" onclick="AreaCalc()">
-			<div>
-				<p>Area of the rectangle is:</p><p id="AreaCalc"></p>
+			<div id ="result">
+				<p> Area of the rectangle is:</p><p id="AreaCalc"></p>
 			</div>
 		 </form>
 		 </div>
-
-<div id= RESAMPLED>
- <form action="">
-  <label for = "length">Length&nbsp;</label>
-  <input type="number" id="length"> <br>
-  <label for = "width">Width&nbsp;&nbsp;</label>
-  <input type="number" id="width">
-  <input type="button" id="calc" value="Submit" onclick="AreaCalculator()">
-  <di
-  <p>Result: </p><p id="AreaCalc"> </p>
-  </div>
-</form>
-</div>
-
-
-<div id= example>
- <form action="">
-  <input type="number" id="amountBorrowed" placeholder="Amount Borrowed">
-  <input type="number" id="mortgageTerm" placeholder="Term in Years">
-  <input type="button" id="sub" value="Submit" onclick="mortgageCalc()">
-  <di
-  <p>Result: </p><p id="monthlyCost"> </p>
-  </div>
-</form>
-</div>
-
 
 		<div id = "webmap-reviews">
         <h3> Webmap Reviews! </h3> 
@@ -80,19 +68,17 @@
 				webmap_table();
 			</script> 
 		</div>
-
-		<div id="copyright">
-			<script>
+ </body>
+ <footer>
+ 	<script>
 			// Create new object for date variable.
 			var today = new Date();
 			// Get the year as a four digit number (yyyy).
 			var year = today.getFullYear();
 			// Produce output in new line
 			document.writeln("Copyright &copy; " + year);
-			</script>
-		</div>
-	</div>	 
- </body>
+	</script>
+ </footer>
  </html>
 
 
