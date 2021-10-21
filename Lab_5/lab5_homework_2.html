@@ -32,12 +32,12 @@ function codeAddress() {
   var address = document.getElementById('address').value;
   geocoder.geocode( { 'address': address}, function(
     results, status) {
-      // for (i = 0, i <= 10, i++);
       if (status == 'OK') {
         map.setCenter(results[0].geometry.location);
+        for (let i = 0; i < results.length; i++)
         var marker = new google.maps.Marker({
           map: map,
-          position: results[0].geometry.location
+          position: results[i].geometry.location
         });
       } else {
         alert("Not able to locate the item searched");
