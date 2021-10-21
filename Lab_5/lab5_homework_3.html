@@ -5,119 +5,249 @@
 <h2> Seven Wonders of the World </h2>
     <style type="text/css">
      #map {
-        height: 600px;
+        height: 500px;
         width: 100%;
       }
     </style>
     <script>
       let map;
-
   function initMap() {
     map = new google.maps.Map(document.getElementById("map"), {
-      center: new google.maps.LatLng(-33.91722, 151.23064),
-      zoom: 16,
+      center: new google.maps.LatLng(0,0),
+      zoom: 2.25,
     });
-
     const iconBase =
-      "https://developers.google.com/maps/documentation/javascript/examples/full/images/";
-    const icons = {
-      parking: {
-        icon: iconBase + "parking_lot_maps.png",
-      },
-      library: {
-        icon: iconBase + "library_maps.png",
-      },
-      info: {
-        icon: iconBase + "info-i_maps.png",
-      },
-    };
-    const features = [
-      {
-        position: new google.maps.LatLng(-33.91721, 151.2263),
-        type: "info",
-      },
-      {
-        position: new google.maps.LatLng(-33.91539, 151.2282),
-        type: "info",
-      },
-      {
-        position: new google.maps.LatLng(-33.91747, 151.22912),
-        type: "info",
-      },
-      {
-        position: new google.maps.LatLng(-33.9191, 151.22907),
-        type: "info",
-      },
-      {
-        position: new google.maps.LatLng(-33.91725, 151.23011),
-        type: "info",
-      },
-      {
-        position: new google.maps.LatLng(-33.91872, 151.23089),
-        type: "info",
-      },
-      {
-        position: new google.maps.LatLng(-33.91784, 151.23094),
-        type: "info",
-      },
-      {
-        position: new google.maps.LatLng(-33.91682, 151.23149),
-        type: "info",
-      },
-      {
-        position: new google.maps.LatLng(-33.9179, 151.23463),
-        type: "info",
-      },
-      {
-        position: new google.maps.LatLng(-33.91666, 151.23468),
-        type: "info",
-      },
-      {
-        position: new google.maps.LatLng(-33.916988, 151.23364),
-        type: "info",
-      },
-      {
-        position: new google.maps.LatLng(-33.91662347903106, 151.22879464019775),
-        type: "parking",
-      },
-      {
-        position: new google.maps.LatLng(-33.916365282092855, 151.22937399734496),
-        type: "parking",
-      },
-      {
-        position: new google.maps.LatLng(-33.91665018901448, 151.2282474695587),
-        type: "parking",
-      },
-      {
-        position: new google.maps.LatLng(-33.919543720969806, 151.23112279762267),
-        type: "parking",
-      },
-      {
-        position: new google.maps.LatLng(-33.91608037421864, 151.23288232673644),
-        type: "parking",
-      },
-      {
-        position: new google.maps.LatLng(-33.91851096391805, 151.2344058214569),
-        type: "parking",
-      },
-      {
-        position: new google.maps.LatLng(-33.91818154739766, 151.2346203981781),
-        type: "parking",
-      },
-      {
-        position: new google.maps.LatLng(-33.91727341958453, 151.23348314155578),
-        type: "library",
-      },
-    ];
-
-    // Create markers.
-    for (let i = 0; i < features.length; i++) {
-      const marker = new google.maps.Marker({
-        position: features[i].position,
-        icon: icons[features[i].type].icon,
-        map: map,
+      "http://maps.google.com/mapfiles/kml/paddle/";
+  //China
+    const contentString1 =
+    '<div id="content">' +
+    '<div id="siteNotice">' +
+    "</div>" +
+    '<h1 id="firstHeading" class="firstHeading">The Great Wall of China</h1>' +
+    '<div id="bodyContent">' +
+    "<p> The Great Wall of China (traditional Chinese: 萬里長城; simplified Chinese: 万里长城; pinyin: Wànlǐ Chángchéng)" +
+    "is a series of fortifications that were built across the historical northern borders of ancient Chinese states and Imperial China" +
+    "as protection against various nomadic groups from the Eurasian Steppe.Several walls were built from as early as the 7th" +
+    "century BC, with selective stretches later joined together by Qin Shi Huang (220–206 BC), the first emperor of China. " +
+    '<p>Source: <a href="https://en.wikipedia.org/wiki/Great_Wall_of_China">' +
+    "https://en.wikipedia.org/wiki/Great_Wall_of_China</a> </p>" +
+    '<img src= "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/The_Great_Wall_of_China_at_Jinshanling-edit.jpg/480px-The_Great_Wall_of_China_at_Jinshanling-edit.jpg">' +
+    "</div>" +
+    "</div>";
+      const infowindow1 = new google.maps.InfoWindow({
+        content: contentString1,
       });
-    }
+      const china = new google.maps.Marker({
+        position: new google.maps.LatLng(40.4320628434537, 116.57048218657914),
+        map,
+        icon: iconBase + "red-stars.png",
+        title: "Great Wall of China",
+      });
+      china.addListener("click", () => {
+        infowindow1.open({
+          anchor: china,
+          map,
+          shouldFocus: false,
+        });
+      });
+    //India
+    const contentString2 =
+    '<div id="content1">' +
+    '<div id="siteNotice1">' +
+    "</div>" +
+    '<h1 id="firstHeading" class="firstHeading">Taj Mahal</h1>' +
+    '<div id="bodyContent1">' +
+    "<p> The Taj Mahal (/ˌtɑːdʒ məˈhɑːl, ˌtɑːʒ-/; lit. 'Crown of the Palace', [taːdʒ ˈmɛːɦ(ə)l]), is an ivory-white marble" +
+    "mausoleum on the right bank of the river Yamuna in the Indian city of Agra. It was commissioned in 1632 by the Mughal" +
+    "emperor Shah Jahan (reigned from 1628 to 1658) to house the tomb of his favourite wife, Mumtaz Mahal; it also houses" +
+    "the tomb of Shah Jahan himself. The tomb is the centrepiece of a 17-hectare (42-acre) complex, which includes a " +
+    "mosque and a guest house, and is set in formal gardens bounded on three sides by a crenellated wall."  +
+    '<p>Source: <a href="https://en.wikipedia.org/wiki/Taj_Mahal">' +
+    "https://en.wikipedia.org/wiki/Taj_Mahal</a> </p>" +
+    '<img src= "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Taj_Mahal_in_India_-_Kristian_Bertel.jpg/440px-Taj_Mahal_in_India_-_Kristian_Bertel.jpg" style="vertical-align:middle">'+
+    "</div>" +
+    "</div>";
+      const infowindow2 = new google.maps.InfoWindow({
+        content: contentString2,
+      });
+      const india = new google.maps.Marker({
+        position: new google.maps.LatLng(27.175326128922823, 78.04213146778078),
+        map,
+        icon: iconBase + "grn-stars.png",
+        title: "Taj Mahal",
+      });
+      india.addListener("click", () => {
+        infowindow2.open({
+          anchor: india,
+          map,
+          shouldFocus: false,
+        });
+      });
+      //Brazil
+      const contentString3 =
+      '<div id="content1">' +
+      '<div id="siteNotice1">' +
+      "</div>" +
+      '<h1 id="firstHeading" class="firstHeading">Christ the Redeemer</h1>' +
+      '<div id="bodyContent1">' +
+      "<p>Christ the Redeemer (Portuguese: Cristo Redentor, standard Brazilian Portuguese: [ˈkɾistu ʁedẽˈtoʁ], local" +
+      "pronunciation: [ˈkɾiɕtŭ̥ xe̞dẽˈtoɦ]) is an Art Deco statue of Jesus Christ in Rio de Janeiro, Brazil, created by French" +
+      "sculptor Paul Landowski and built by Brazilian engineer Heitor da Silva Costa, in collaboration with French engineer" +
+      "Albert Caquot. Romanian sculptor Gheorghe Leonida fashioned the face. Constructed between 1922 and 1931, the " +
+      "statue is 30 metres (98 ft) high, excluding its 8-metre (26 ft) pedestal." +
+      " The arms stretch 28 metres (92 ft) wide."  +
+      '<p>Source: <a href="https://en.wikipedia.org/wiki/Christ_the_Redeemer_(statue)">' +
+      "https://en.wikipedia.org/wiki/Christ_the_Redeemer_(statue)</a> </p>"
+      +
+      '<img src= "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Aerial_view_of_the_Statue_of_Christ_the_Redeemer.jpg/440px-Aerial_view_of_the_Statue_of_Christ_the_Redeemer.jpg">'+
+      "</div>" +
+      "</div>";
+        const infowindow3 = new google.maps.InfoWindow({
+          content: contentString3,
+        });
+        const brazil = new google.maps.Marker({
+          position: new google.maps.LatLng(-22.951728275043124, -43.21037991379361),
+          map,
+          icon: iconBase + "pink-stars.png",
+          title: "Chris the Redeemer",
+        });
+        brazil.addListener("click", () => {
+          infowindow3.open({
+            anchor: brazil,
+            map,
+            shouldFocus: false,
+          });
+        });
+        //Peru
+        const contentString4 =
+        '<div id="content1">' +
+        '<div id="siteNotice1">' +
+        "</div>" +
+        '<h1 id="firstHeading" class="firstHeading">Macchu Picchu</h1>' +
+        '<div id="bodyContent1">' +
+        "<p>Machu Picchu is a 15th-century Inca citadel located in the Eastern Cordillera of southern Peru on a 2,430-meter" +
+        "(7,970 ft) mountain ridge. It is located in the Machupicchu District within Urubamba Province above the" +
+        "Sacred Valley, which is 80 kilometers (50 mi) northwest of Cuzco. The Urubamba River flows past it, cutting" +
+        " through the Cordillera and creating a canyon with a tropical mountain climate."  +
+        '<p>Source: <a href="https://en.wikipedia.org/wiki/Machu_Picchu">' +
+        "https://en.wikipedia.org/wiki/Machu_Picchu</a> </p>"
+        +
+        '<img src= "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Machu_Picchu%2C_Peru.jpg/600px-Machu_Picchu%2C_Peru.jpg">'+
+        "</div>" +
+        "</div>";
+          const infowindow4 = new google.maps.InfoWindow({
+            content: contentString4,
+          });
+          const peru = new google.maps.Marker({
+            position: new google.maps.LatLng(-13.16290091089782, -72.5449199869332),
+            map,
+            icon: iconBase + "ltblu-stars.png",
+            title: "Macchu Picchu",
+          });
+          peru.addListener("click", () => {
+            infowindow4.open({
+              anchor: peru,
+              map,
+              shouldFocus: false,
+            });
+          });
+          //Italy
+          const contentString5 =
+          '<div id="content1">' +
+          '<div id="siteNotice1">' +
+          "</div>" +
+          '<h1 id="firstHeading" class="firstHeading">Colosseum</h1>' +
+          '<div id="bodyContent1">' +
+          "<p>The Colosseum (/ˌkɒləˈsiːəm/ KOL-ə-SEE-əm; Italian: Colosseo [kolosˈsɛːo]) is an oval amphitheatre in the centre of" +
+          "the city of Rome, Italy, just east of the Roman Forum. It is the largest ancient amphitheatre ever built, and is still the" +
+          "largest standing amphitheatre in the world today, despite its age. Construction began under the emperor Vespasian" +
+          "(r. 69–79 AD) in 72 and was completed in 80 AD under his successor and heir, Titus (r. 79–81)"  +
+          '<p>Source: <a href="https://en.wikipedia.org/wiki/Colosseum">' +
+          "https://en.wikipedia.org/wiki/Colosseum</a> </p>"
+          +
+          '<img src= "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Colosseo_2020.jpg/500px-Colosseo_2020.jpg">'+
+          "</div>" +
+          "</div>";
+            const infowindow5 = new google.maps.InfoWindow({
+              content: contentString5,
+            });
+            const italy = new google.maps.Marker({
+              position: new google.maps.LatLng(41.89032998131497, 12.492198711749825),
+              map,
+              icon: iconBase + "ylw-stars.png",
+              title: "Colosseum",
+            });
+            italy.addListener("click", () => {
+              infowindow5.open({
+                anchor: italy,
+                map,
+                shouldFocus: false,
+              });
+            });
+            //Egypt
+            const contentString6 =
+            '<div id="content1">' +
+            '<div id="siteNotice1">' +
+            "</div>" +
+            '<h1 id="firstHeading" class="firstHeading">Great Pyramid of Giza</h1>' +
+            '<div id="bodyContent1">' +
+            "<p>The Great Pyramid of Giza (also known as the Pyramid of Khufu or the Pyramid of Cheops) is the oldest" +
+            "and largest of the pyramids in the Giza pyramid complex bordering present-day Giza in Greater Cairo, Egypt." +
+            "It is the oldest of the Seven Wonders of the Ancient World, and the only one to remain largely intact." +
+            '<p>Source: <a href="https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza">' +
+            "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza</a> </p>"+
+            '<img src= "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Kheops-Pyramid.jpg/600px-Kheops-Pyramid.jpg">'+
+            "</div>" +
+            "</div>";
+              const infowindow6 = new google.maps.InfoWindow({
+                content: contentString6,
+              });
+              const egypt = new google.maps.Marker({
+                position: new google.maps.LatLng(29.97941105612817, 31.13415898135102),
+                map,
+                icon: iconBase + "purple-stars.png",
+                title: "Great Pyramid of Giza",
+              });
+              egypt.addListener("click", () => {
+                infowindow6.open({
+                  anchor: egypt,
+                  map,
+                  shouldFocus: false,
+                });
+              });
+              //Mexico
+              const contentString7 =
+              '<div id="content1">' +
+              '<div id="siteNotice1">' +
+              "</div>" +
+              '<h1 id="firstHeading" class="firstHeading">Chichén Itzá</h1>' +
+              '<div id="bodyContent1">' +
+              "<p>Chichen Itza was a large pre-Columbian city built by the Maya people of the Terminal Classic" +
+              "period. The archeological site is located in Tinúm Municipality, Yucatán State, Mexico." +
+              "Chichen Itza was a major focal point in the Northern Maya Lowlands from the Late Classic (c. AD 600–" +
+              "900) through the Terminal Classic (c. AD 800–900) and into the early portion of the Postclassic period (c."+
+              "AD 900–1200). " +
+              '<p>Source: <a href="https://en.wikipedia.org/wiki/Chichen_Itza">' +
+              "https://en.wikipedia.org/wiki/Chichen_Itza</a> </p>"+
+              '<img src= "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Chichen_Itza_3.jpg/720px-Chichen_Itza_3.jpg">'+
+              "</div>" +
+              "</div>";
+                const infowindow7 = new google.maps.InfoWindow({
+                  content: contentString7,
+                });
+                const mexico = new google.maps.Marker({
+                  position: new google.maps.LatLng(20.68452159307718, -88.567812252978),
+                  map,
+                  icon: iconBase + "orange-stars.png",
+                  title: "Chichén Itzá",
+                });
+                egypt.addListener("click", () => {
+                  infowindow7.open({
+                    anchor: mexico,
+                    map,
+                    shouldFocus: false,
+                  });
+                });
   }
     </script>
   </head>
