@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Homework 2</title>
+    <style type="text/css">
+      #map {
+        height: 400px;
+        width: 100%;
+      }
+    </style>
+<script>
+function initMap(){
+const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 3,
+    center: {lat: 0, lng: -180 },
+    mapTypeId: "terrain",
+  });
+}
+var geocoder;
+var map;
+function initilize() {
+  geocoder = new google.maps.Geocoder();
+  var latlng = new google.maps.LatLng(-34.397, 150.644);
+  var mapOptions = {
+    zoom: 2,
+    center: latlng
+  }
+  map = new google.maps.Map(document.getElementById('map')
+  , mapOptions);
+}
+function codeAddress() {
+  var address = document.getElementById('address').value;
+  geocoder.geocode( { 'address': address}, function(
+    results, status) {
+      // for (i = 0, i <= 10, i++);
+      if (status == 'OK') {
+        map.setCenter(results[0].geometry.location);
+        var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+        });
+      } else {
+        alert("Not able to locate the item searched");
+      }
+    }
+  )};
+</script>
+  </head>
+<body onload= "initilize()">
+    <div id="map" style=" width: 1500px; height: 480px; "></div>
+    <div>
+      <input id="address" type="textbook" placeholder="Write Name of a Place!" />
+      <input type="button" value="Geocode" onclick="codeAddress()" />
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACbgv1mNDwvVz7OVgyZoCe8nmFhVJMxOE&callback=initMap&v=weekly" async> </script>
+    </div>
+    </body>
+  </html>

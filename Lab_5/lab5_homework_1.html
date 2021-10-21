@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Homework 1</title>
+    <style type="text/css">
+      #map {
+        width: 600px;
+        height: 550px;
+        position: relative;
+        overflow: hidden;
+      }
+    </style>
+    <script>
+      let polyl;
+      let polyg;
+      let map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 1.75,
+          center: { lat: 0, lng: 0 }, // Center world map
+        });
+          var selection = document.getElementById("selection").value;
+          if ("Polyline") {
+            polyl = new google.maps.Polyline({
+              strokeColor: "#000000",
+              strokeOpacity: 1.0,
+              strokeWeight: 3,
+            })
+            polyl.setMap(map);
+            map.addListener("click", addLatLng);
+          } else if ("Polygon") {
+            polyg = new google.maps.Polygon({
+              strokeColor: "#000000",
+              strokeOpacity: 1.0,
+              strokeWeight: 3,
+            });
+            polyg.setMap(map);
+            map.addListener("click", addLatLng);
+          };
+          function addLatLng(event) {
+            const path1 = polyl.getPath()
+            path1.push(event.latLng);
+            const path2 = polyl.getPath()
+            path2.push(event.latLng);
+          };
+        }
+    </script>
+  </head>
+  <body>
+    <div id="map"></div>
+      <script async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACbgv1mNDwvVz7OVgyZoCe8nmFhVJMxOE&callback=initMap&libraries=&v=weekly">
+    </script>
+    <div id = "selection">
+      <select onchange = "handleSelected(this)">
+        <option selected> - Select - </option>
+       <option value= "Polyline"> Polyline </option>
+       <option value= "Polygon"> Polygon </option>
+      </select>
+    </div>
+    </body>
+  </html>
