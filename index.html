@@ -1,10 +1,54 @@
   <!doctype html>
   <html>
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+  <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' /> -->
+  <script src="http://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="javascript/leaflet-providers.js"></script>
+
+  <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+  <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <script src = "https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin="">
+    </script>
+
+
+    <!-- Plugin for fullscreen -->
+    <link rel="stylesheet" href="plugins/leaflet.fullscreen-master/Control.FullScreen.css" />
+    <script src="plugins/leaflet.fullscreen-master/Control.FullScreen.js"></script>
+
+    <!-- Plugin for mousePosition -->
+    <link rel="stylesheet" href="plugins/Leaflet.MousePosition-master/src/L.Control.MousePosition.css" />
+    <script src="plugins/Leaflet.MousePosition-master/src/L.Control.MousePosition.js"></script>
+
+    <!-- Plugin for bounce -->
+    <!-- <link rel="stylesheet" href="plugins/leaflet.bouncemarker-main/locationfilter.css"/> -->
+    <script src = "plugins/leaflet.bouncemarker-main/bouncemarker.js"> </script>
+
+    <!-- Plugin for graticule -->
+    <script src = "plugins/Leaflet.Graticule-master/L.Graticule.js"> </script>
+
 	<title> Aandishah Tehzeeb Samara </title>
 	<!--All styling for this HTML document is contained in this external css file -->
 	<link rel="stylesheet" type="text/css" href="css/main_style.css">
-	<script src="javascript/external.js"></script> 
+  <link rel="stylesheet" type="text/css" href="css/map_style.css"/>
+	<script src="javascript/external.js"></script>
+  <script src="javascript/secret_keys.js"></script>
+  <script src="javascript/map.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/opencagedata/leaflet-opencage-search@d4cbd36122efc8d17152b4177ed0e12165305441/dist/css/L.Control.OpenCageData.Search.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/opencagedata/leaflet-opencage-search@d4cbd36122efc8d17152b4177ed0e12165305441/dist/js/L.Control.OpenCageSearch.min.js"></script>
+
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/opencagedata/leafletopencagesearch@d4cbd36122efc8d17152b4177ed0e12165305441/dist/css/L.Control.OpenCageData.Search.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/opencagedata/leaflet-opencagesearch@d4cbd36122efc8d17152b4177ed0e12165305441/dist/js/L.Control.OpenCageSearch.min.js"></script> -->
 	<style>
 table {
   border-collapse: collapse;
@@ -19,7 +63,7 @@ tr:nth-child(odd) {background-color: lightgrey;}
 thead, tbody { display: block; }
 
 tbody {
-    height: 300px;       
+    height: 300px;
     overflow-y: auto;    /* Trigger vertical scroll    */
     overflow-x: hidden;  /* Hide the horizontal scroll */
 }
@@ -37,8 +81,8 @@ tbody {
 			<img src=images/profile-picture.jpg width=250px height=250px />
 		</div>
 		<div id="Welcome-text">
-		  My name is Aandishah! <br> Welcome to my webpage! <br> 
-		  I am student in the 
+		  My name is Aandishah! <br> Welcome to my webpage! <br>
+		  I am student in the
 		  <a href='https://www.clarku.edu/departments/geography/'>Graduate School of Geography</a> at
 		  <a href="https://www.clarku.edu/"> Clark University</a>.</p>
 		 </div>
@@ -68,23 +112,16 @@ tbody {
 		 </div>
 
 		<div id = "webmap-reviews">
-        <h3> Webmap Reviews! </h3> 
+        <h3> Webmap Reviews! </h3>
 			<script>
 				webmap_table();
-			</script> 
-		</div>
-<!-- 
-		<div id="copyright">
-			<script>
-			// Create new object for date variable.
-			var today = new Date();
-			// Get the year as a four digit number (yyyy).
-			var year = today.getFullYear();
-			// Produce output in new line
-			document.writeln("Copyright &copy; " + year);
 			</script>
-		</div> -->
-	</div>	 
+		</div>
+    <h3> Geocoding Map <h3>
+      <div id="mapid" style="width: 800px; height: 600px; margin: auto;">
+      <input type = "button" onclick = "geocodermap()" value = "Display">
+    </div>
+	</div>
  </body>
  <footer>
  	<script>
@@ -97,5 +134,3 @@ tbody {
 	</script>
  </footer>
  </html>
-
-
