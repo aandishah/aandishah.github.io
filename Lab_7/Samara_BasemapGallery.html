@@ -1,0 +1,53 @@
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Basemap Gallery Widget Edited by Aandishah </title>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.21/esri/themes/light/main.css" />
+    <style>
+      html,
+      body,
+      #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+    <script src="https://js.arcgis.com/4.21/"></script>
+   <link rel="stylesheet" href="https://js.arcgis.com/4.21/esri/themes/light/main.css">
+  <script>
+  //Add the components to call the map and the basemap BasemapGallery
+    require(["esri/config", "esri/Map", "esri/views/SceneView", "esri/widgets/BasemapGallery"], (esriConfig, Map, SceneView, BasemapGallery) => { //Add the correct additions
+// Add APi Key
+    esriConfig.apiKey = "AAPKdb60ac11ba5b452abe21a20211159f24-XQMDVpmr6kA4_4WtyWyvkHJnqskcGn3r-p-68XZAAKxFVsuLBfw7oDtBw238-Fy";
+//Create New Map
+  const map = new Map({
+    basemap: "streets" //Basemap layer service
+  });
+//Create New Scene
+  const view = new SceneView({
+            container: "viewDiv",
+            map: map,
+            center: [139.68, 35.68],
+            zoom: 3
+          });
+//Create variable for Basemps
+     const basemapGallery = new BasemapGallery({
+        view: view,
+        container: basemapGalleryDiv
+      });
+//Add a widget to show all the basemaps and display them to bottom-left corner of the view
+        view.ui.add(basemapGallery, {
+          position: "bottom-left" //PLacements of the gallery has been changed from original
+        });
+      });
+
+      //Overall the widget was simple enough - it was not possible to add any custombase layers though
+    </script>
+
+<body>
+ <!--  Specify an already-defined HTML div element in the widget's container HTML markup -->
+  <div id="viewDiv"></div>
+  <div id="basemapGalleryDiv"></div>
+</body>

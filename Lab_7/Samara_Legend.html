@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <title>Legend widget Edited by Aandishah</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.21/esri/themes/light/main.css" />
+
+    <style>
+      html,
+      body,
+      #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+      }
+    </style>
+
+    <script src="https://js.arcgis.com/4.21/"></script>
+    <script>
+      require(["esri/views/MapView", "esri/widgets/Legend", "esri/WebMap"],
+      (MapView, Legend, WebMap) => {
+        const webmap = new WebMap({
+          portalItem: {
+            // autocasts as new PortalItem()
+            id: "05e015c5f0314db9a487a9b46cb37eca"
+          }
+        });
+
+        const view = new MapView({
+          container: "viewDiv",
+          map: webmap
+        });
+
+        view.when(() => {
+          // get the first layer in the collection of operational layers in the WebMap
+          // when the resources in the MapView have loaded.
+          const featureLayer = webmap.layers.getItemAt(0);
+          const legend = new Legend({
+            view: view,
+            layerInfos: [
+              {
+                layer: featureLayer,
+                title: "NY Level of Education" //Changed Title
+              }
+            ]
+          });
+
+          // Add widget to the bottom left corner of the view
+          view.ui.add(legend, "bottom-left"); //Changed the position of widget
+        });
+      });
+      //There is no option to render / change the inputs of the legend such as the color and breakdown which would be helpful
+    </script>
+  </head>
+
+  <body class="calcite">
+    <div id="viewDiv"></div>
+  </body>
+</html>

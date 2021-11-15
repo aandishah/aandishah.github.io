@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>ElevationProfile Widget  Edited by Aandishah</title>
+    <style>
+      html,
+      body,
+      #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+      .esri-elevation-profile.esri-component.esri-widget--panel { //This component adds the widget panel
+        width: 350px !important;
+      }
+    </style>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.21/esri/themes/light/main.css" />
+    <script src="https://js.arcgis.com/4.21/"></script>
+    <script>
+    //Adding all the require for esri component that need to be called to run this widget
+      require(["esri/WebScene", "esri/views/SceneView", "esri/widgets/ElevationProfile"], (
+        WebScene,
+        SceneView,
+        ElevationProfile
+      ) => {
+        //Creating a new webscene
+        const webscene = new WebScene({
+          portalItem: {
+            id: "9a542f6755274436985617a462ffdf44"
+          }
+        });
+        // Create the scene view
+        const view = new SceneView({
+          container: "viewDiv",
+          map: webscene,
+          camera: {
+            position: {
+              spatialReference: { latestWkid: 3857, wkid: 102100 },
+              x: -8238359,
+              y: 4967229,
+              z: 686
+            },
+            heading: 353,
+            tilt: 66
+          }
+        });
+
+
+          //Added the input and query
+        // Create the elevation profile widget
+        const elevationProfile = new ElevationProfile({
+          view: view,
+          // configure widget with desired profile lines
+          profiles: [{
+              // displays elevation values from Map.ground
+              type: "ground", //autocasts as new ElevationProfileLineGround()
+            }, {
+              // displays elevation values from the input line graphic
+              type: "input", //autocasts as new ElevationProfileLineInput()
+            }, {
+              // displays elevation values from an elevation source
+              type: "query", //autocasts as new ElevationProfileLineQuery()
+            }, {
+              // displays elevation values from a SceneView
+              type: "view" //autocasts as new ElevationProfileLineView()
+            }]
+          });
+
+        // add the widget to the view
+        view.ui.add(elevationProfile, "bottom-right"); //Changed placement of the widget
+      });
+      //I was not able to get the query function to work with this basemap 
+    </script>
+  </head>
+
+  <body>
+    <div id="viewDiv"></div>
+  </body>
+</html>
